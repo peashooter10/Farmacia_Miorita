@@ -1,0 +1,284 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Jost:wght@300;400;500;600&display=swap');
+
+/* ---------- Proprietati de baza ---------- */
+:root {
+  --fundal-inchis:  #2a3d2b; /* navbar, hero, sectiunea about, footer */
+  --fundal-mediu:   #3d5a3e; /* buton abonare, etichete formular */
+  --fundal-deschis: #6b8f6c; /* capat gradient buton abonare */
+
+  --pagina:         #f5f0e8; /* background pagina si input-uri */
+  --separator:      #e8e0ce; /* borduri carduri, background newsletter */
+
+  --accent:         #c9963a; /* linie decorativa, borduri, hover underline */
+  --accent-deschis: #e8bf7a; /* logo navbar, text hover, titluri in footer */
+
+  --text-principal: #2c2416; /* textul principal al paginii */
+  --text-secundar:  #6b5d47; /* subtitluri, descrieri, placeholder */
+  --text-pe-inchis: #fffdf8; /* text si carduri pe fundaluri inchise */
+
+  --radius:      8px;
+  --shadow:      0 6px 24px rgba(44, 36, 22, 0.1);
+  --tranzitie:   0.35s ease;
+}
+
+/* ---------- Reset & Base ---------- */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Jost', sans-serif;
+  color: var(--text-principal);
+  background-color: var(--pagina);
+  line-height: 1.75;
+  font-weight: 400;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ---------- Hero / Logo ---------- */
+.hero {
+  background-color: var(--fundal-inchis);
+  border-bottom: 3px solid var(--accent);
+  padding: 28px 32px;
+}
+
+.heroLogo {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.heroLogoText p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: var(--accent-deschis);
+  letter-spacing: 0.03em;
+}
+
+.heroLogoImagine {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+}
+
+.heroLogoImagine img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  /* logo-ul e negru, il fac sa para auriu */
+  filter: invert(1) sepia(1) saturate(2) hue-rotate(5deg) brightness(0.85);
+}
+
+/* ---------- Login Section ---------- */
+.login {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 64px 24px;
+  background-color: var(--separator);
+  /* linie decorativa subtire deasupra formularului */
+  position: relative;
+}
+
+.login::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-deschis));
+  border-radius: 2px;
+}
+
+/* ---------- Formular ---------- */
+.formular {
+  width: 100%;
+  max-width: 460px;
+  background: var(--text-pe-inchis);
+  padding: 48px 52px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(201, 150, 58, 0.2);
+}
+
+/* ---------- Titlu ---------- */
+.titluLogin {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--fundal-inchis);
+  text-align: center;
+  margin-bottom: 8px;
+  letter-spacing: 0.02em;
+}
+
+/* linia aurie de sub titlu */
+.titluLogin::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-deschis));
+  margin: 10px auto 32px;
+  border-radius: 2px;
+}
+
+/* ---------- Campuri formular ---------- */
+.elementFormular {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+/* label-ul deasupra input-ului */
+.elementFormularInput label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--fundal-mediu);
+  margin-bottom: 6px;
+  display: block;
+}
+
+/* input-ul propriu-zis */
+.elementFormularLabel input {
+  width: 100%;
+  padding: 11px 16px;
+  border: 2px solid var(--separator);
+  border-radius: var(--radius);
+  font-family: 'Jost', sans-serif;
+  font-size: 0.95rem;
+  color: var(--text-principal);
+  background: var(--pagina);
+  transition: border-color var(--tranzitie), box-shadow var(--tranzitie);
+}
+
+.elementFormularLabel input:focus {
+  outline: none;
+  border-color: var(--fundal-mediu);
+  box-shadow: 0 0 0 3px rgba(61, 90, 62, 0.15);
+}
+
+.elementFormularLabel input::placeholder {
+  color: var(--text-secundar);
+  font-style: italic;
+  font-size: 0.9rem;
+}
+
+/* ---------- Sectiunea de jos a formularului ---------- */
+.loginSuplimentar {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.butonLogareFormular {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+/* butonul de login */
+.butonLogare {
+  padding: 11px 36px;
+  background: linear-gradient(135deg, var(--fundal-inchis), var(--fundal-deschis));
+  color: var(--text-pe-inchis);
+  border: none;
+  border-radius: var(--radius);
+  font-family: 'Jost', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  transition: filter var(--tranzitie), transform var(--tranzitie);
+}
+
+.butonLogare:hover {
+  filter: brightness(1.15);
+  transform: translateY(-2px);
+}
+
+/* link-uri secundare */
+.butonLogareFormular a,
+.loginSuplimentar > a {
+  font-size: 0.85rem;
+  color: var(--text-secundar);
+  transition: color var(--tranzitie);
+  text-align: center;
+}
+
+.butonLogareFormular a:hover,
+.loginSuplimentar > a:hover {
+  color: var(--accent);
+}
+
+/* linie separatoare inainte de "Nu ai cont?" */
+.loginSuplimentar > a {
+  padding-top: 14px;
+  border-top: 1px solid var(--separator);
+  color: var(--fundal-mediu);
+  font-weight: 500;
+}
+
+.loginSuplimentar > a:hover {
+  color: var(--accent);
+}
+
+/* ---------- Footer ---------- */
+.info {
+  background-color: var(--fundal-inchis);
+  border-top: 3px solid var(--accent);
+}
+
+.footerBottom {
+  text-align: center;
+  padding: 20px 32px;
+  color: rgba(232, 224, 206, 0.55);
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 520px) {
+  .formular {
+    padding: 36px 28px;
+  }
+
+  .butonLogareFormular {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+  }
+
+  .butonLogare {
+    width: 100%;
+  }
+}

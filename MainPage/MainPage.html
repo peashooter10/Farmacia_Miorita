@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+
+<!--metadate, de exemplu fontul folosit, fisierul css atasat si titlul paginii-->
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="MainPage.css" />
+  <title>Farmacia Miorița</title>
+</head>
+
+<!-- partea propriu-zisa a site-ului, adica partea de body-->
+
+<body>
+  <!---navigare in pagina la diferite sectiuni-->
+  <nav class="baraNavigare">
+    <div class="containerNavigare">
+      <a href="MainPage.html">Farmacia Miorița &hearts;</a>
+      <ul class="sectiuniSite">
+        <li><a href="#hero">Acasa</a></li>
+        <li><a href="#listaProduse">Produse</a></li>
+        <li><a href="#about">Despre noi</a></li>
+        <li><a href="#newsletter">Aboneaza-te la newsletter</a></li>
+        <li><a href="#locatii">Locatii</a></li>
+        <li><a href="../UserLogin/UserLogin.html">Conectare</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!--hero section unde sunt cateva informatii depsre farmacie-->
+  <section id="hero" class="hero">
+    <div class="moreHero">
+      <h1>
+        Farmacia Miorița nu este numai o farmacie,<br>
+        este un loc unde gasesti ce ai nevoie,<br>
+        cand ai nevoie, de la niste oameni ca si tine.
+      </h1>
+      <p>
+      <div class="heroImagine">
+        <img
+          src="https://i0.wp.com/www.moretolifetoday.net/wp-content/uploads/2020/11/shepherd-and-sheep-unsplash.jpg?fit=1050%2C700&ssl=1" />
+      </div>
+      </p>
+    </div>
+  </section>
+
+  <!--lista de produse vandute de farmacie-->
+  <section id="listaProduse" class="listaProduse">
+    <h2 class="listaTitlu">Produsele noastre</h2>
+    <div class="gridMedicamente">
+      <div class="imagineMedicament">
+        <img
+          src="https://redlabelhealth.co.uk/cdn/shop/articles/4dfe0665-a76a-4c06-ac8a-688ebaea8a96_1024x1024.jpg?v=1688726188"
+          alt="Vitamine" />
+        <div class="imagineMedicamentText">
+          <h3>Vitamine</h3>
+          <p>Pentru o viata sanatoasa</p>
+        </div>
+      </div>
+      <div class="imagineMedicament">
+        <img
+          src="https://www.zelusrecovery.com/wp-content/uploads/2023/11/What-Drugs-are-Classed-as-Synthetic-Drugs-1024x683.jpg"
+          alt="Medicamente" />
+        <div class="imagineMedicamentText">
+          <h3>Medicamente</h3>
+          <p>Sa fii healthy</p>
+        </div>
+      </div>
+      <div class="imagineMedicament">
+        <img src="https://cdn.shopify.com/s/files/1/0632/4912/1521/files/th_480x480.jpg?v=1672911534"
+          alt="Mancare sanatoasa" />
+        <div class="imagineMedicamentText">
+          <h3>Produse naturiste</h3>
+          <p>Sa fii slab</p>
+        </div>
+      </div>
+      <div class="imagineMedicament">
+        <img src="https://m.media-amazon.com/images/I/41mzByf+J9L.jpg" alt="Dispozitive medicale" />
+        <div class="imagineMedicamentText">
+          <h3>Dispozitive medicale</h3>
+          <p>Sa fii doctor acasa</p>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!--sectiunea about, informatii despre farmacie-->
+  <section id="about" class="sectiuneAbout">
+    <div class="containerAbout">
+      <div class="imagineAbout">
+        <img
+          src="https://assets.farmsanctuary.org/content/uploads/2025/05/15062015/2024_04-19_FSNY_Margaretta_lamb_LH_4565-scaled.jpg"
+          alt="Miorița" />
+      </div>
+      <div class="textAbout">
+        <h2>Povestea noastra</h2>
+        <p>
+          Farmacia Miorița &hearts; a aparut dupa ce am inteles ca
+          romanii au nevoie de o farmacie pentru romani, fara prea
+          multe fineturi, cu medicamente, vitamine si produse
+          IEFTINE si BUNE.
+        </p>
+        <p>
+          Medicamentele vandute de farmaciile Farmacia Miorița &hearts;
+          au fost alese dupa inima voastra, medicamente eficiente si ieftine,
+          iar produsele din gama noastra proprie garanteaza satisfactie 100%.
+          Scopul? Sa ajutam cetatenii, nu sa facem bani :)
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!--sectiunea cu newsletter-->
+  <section id="newsletter" class="newsletter">
+    <h2 class="newsletterTitlu">Aboneaza-te la newsletter</h2>
+
+    <form class="formularAbonare" action="#" method="post">
+
+      <div class="randFormular">
+        <div class="elementFormular">
+          <label for="nume">Nume</label>
+          <input type="text" id="nume" name="nume" placeholder="Oiescu" required />
+        </div>
+
+        <div class="elementFormular">
+          <label for="prenume">Prenume</label>
+          <input type="text" id="prenume" name="prenume" placeholder="Miorița" required />
+        </div>
+      </div>
+
+      <div class="randFormular">
+        <div class="elementFormular">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="cu_oitele_pe_camp@stana.com" required />
+        </div>
+      </div>
+      <button class="newsletterButon">
+        Aboneaza-te
+      </button>
+
+    </form>
+  </section>
+
+  <!--footer-->
+  <footer id="locatii" class="locatii">
+    <div class="containterLocatii">
+      <div class="coloana">
+        <h3>Locatie</h3>
+        <p>strada ciobanilor nr 10</p>
+        <p>baia mare, romania</p>
+      </div>
+      <div class="coloana">
+        <h3>Locatie</h3>
+        <p>strada oitelor nr 100</p>
+        <p>dej, romania</p>
+      </div>
+    </div>
+    <div class="footerBottom">
+      <p>&copy; Farmacia Miorita &hearts; 2026 toate drepturile rezervate</p>
+    </div>
+  </footer>
+</body>
+
+</html>
