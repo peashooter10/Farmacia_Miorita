@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/static/ContFarmaciaMiorita/Sectiuni/Administrare/Angajati/Angajati.css" />
+    <title>Farmacia Miorița</title>
+</head>
+
+<body> <!-- bara de logo -->
+    <section id="logo" class="logo">
+        <div class="logoBara">
+            <div class="logoBaraText">
+                <p>Farmacia Miorița &hearts;</p>
+            </div>
+            <div class="logoBaraImagine"> <img
+                    src="https://e7.pngegg.com/pngimages/1014/378/png-clipart-shetland-sheep-computer-icons-black-sheep-wool-glass-glass-logo.png"
+                    alt="Farmacia Miorița logo" /> </div>
+        </div>
+    </section>
+    <div class="paginaPrincipala"> <!-- sectiunea de angajati -->
+        <section id="angajati" class="angajati">
+            <div class="baraAngajati">
+                <div class="baraAngajatiText">
+                    <h2>Angajati</h2>
+                </div>
+            </div>
+            <p id="mesaj" style="font-weight:bold;"></p>
+            <div class="tabelAngajati" id="tabelAngajati"></div>
+        </section> <!-- sectiunea de adaugare -->
+        <section id="adauga" class="adauga">
+            <div class="adaugaTitlu">Adaugare angajat</div>
+            <form class="adaugaAngajat">
+                <div class="randFormular">
+                    <div class="elementFormular"> <label for="nume">Nume</label> <input type="text" id="nume"
+                            name="nume" placeholder="Ionescu"> </div>
+                    <div class="elementFormular"> <label for="prenume">Prenume</label> <input type="text" id="prenume"
+                            name="prenume" placeholder="Ana"> </div>
+                </div>
+                <div class="randFormular">
+                    <div class="elementFormular"> <label for="email">Email</label> <input type="email" id="email"
+                            name="email" placeholder="AnaIonescu@gmail.com"> </div>
+                </div>
+                <div class="randFormular">
+                    <div class="elementFormular"> <label for="localitate">Localitate</label> <input type="text"
+                            id="localitate" name="localitate" placeholder="Baia Mare"> </div>
+                    <div class="elementFormular"> <label for="judet">Judet</label> <input type="text" id="judet"
+                            name="judet" placeholder="Maramures"> </div>
+                </div>
+                <div class="randFormular">
+                    <div class="elementFormular"> <label for="Rol">Rol</label> <input type="text" id="rol" name="rol"
+                            placeholder="Farmacist"> </div>
+                </div>
+                <div class="randFormular">
+                    <div class="elementFormular"> <label for="varsta">varsta</label> <input type="text" id="varsta"
+                            name="varsta" placeholder="an"> </div>
+                </div> <button type="button" class="newsletterButon" onclick="adaugaAngajat()">Adauga angajat</button>
+            </form>
+        </section>
+    </div> <!-- js separat -->
+    <script src="/static/ContFarmaciaMiorita/Sectiuni/Administrare/Angajati/Angajati.js"></script>
+</body>
+
+</html>

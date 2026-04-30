@@ -1,0 +1,301 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Jost:wght@300;400;500;600&display=swap');
+
+/* ---------- Proprietati de baza ---------- */
+:root {
+    --fundal-inchis: #2a3d2b;
+    /* navbar, hero, sectiunea about, footer */
+    --fundal-mediu: #3d5a3e;
+    /* buton abonare, etichete formular */
+    --fundal-deschis: #6b8f6c;
+    /* capat gradient buton abonare */
+    --pagina: #f5f0e8;
+    /* background pagina si input-uri */
+    --separator: #e8e0ce;
+    /* borduri carduri, background newsletter */
+    --accent: #c9963a;
+    /* linie decorativa, borduri, hover underline */
+    --accent-deschis: #e8bf7a;
+    /* logo navbar, text hover, titluri in footer */
+    --text-principal: #2c2416;
+    /* textul principal al paginii */
+    --text-secundar: #6b5d47;
+    /* subtitluri, descrieri, placeholder */
+    --text-pe-inchis: #fffdf8;
+    /* text si carduri pe fundaluri inchise */
+    --radius: 8px;
+    --shadow: 0 6px 24px rgba(44, 36, 22, 0.1);
+    --tranzitie: 0.35s ease;
+}
+
+/* reset */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Jost', sans-serif;
+    color: var(--text-principal);
+    background-color: var(--pagina);
+    line-height: 1.75;
+    font-weight: 400;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* logo site */
+.logo {
+    background-color: var(--fundal-inchis);
+    border-bottom: 3px solid var(--accent);
+    padding: 10px 12px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logoBara {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 16px;
+}
+
+.logoBaraText p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.9rem;
+    font-weight: 700;
+    color: var(--accent-deschis);
+    letter-spacing: 0.03em;
+}
+
+.logoBaraImagine {
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+}
+
+.logoBaraImagine img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    /* logo-ul e negru, il fac sa para auriu */
+    filter: invert(1) sepia(1) saturate(2) hue-rotate(5deg) brightness(0.85);
+}
+
+/* wrapper principal 75/25 */
+.paginaPrincipala {
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+}
+
+/* stanga: angajati 75% */
+.angajati {
+    flex: 3;
+    padding: 40px 30px;
+}
+
+.baraAngajati {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--fundal-inchis);
+    border-radius: var(--radius) var(--radius) 0 0;
+    padding: 10px 16px;
+}
+
+.baraAngajatiText h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--accent-deschis);
+    letter-spacing: 0.03em;
+}
+
+.baraAngajatiButoane {
+    display: flex;
+    gap: 8px;
+}
+
+.tabelAngajati {
+    border: 1px solid var(--separator);
+    border-top: none;
+    border-radius: 0 0 var(--radius) var(--radius);
+    overflow: hidden;
+}
+
+.angajat {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 16px;
+    background-color: var(--pagina);
+    border-bottom: 1px solid var(--separator);
+}
+
+.angajat:last-child {
+    border-bottom: none;
+}
+
+.infoAngajat {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.infoAngajatImagine {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+    border: 2px solid var(--separator);
+}
+
+.infoAngajatImagine img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: invert(1) sepia(1) saturate(2) hue-rotate(5deg) brightness(0.85);
+}
+
+.infoAngajatNume p {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--text-principal);
+}
+
+.stergereAngajat {
+    background: none;
+    border: 1px solid var(--accent);
+    border-radius: var(--radius);
+    padding: 5px 12px;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.82rem;
+    color: var(--accent);
+    cursor: pointer;
+    transition: background-color var(--tranzitie), color var(--tranzitie);
+}
+
+.stergereAngajat:hover {
+    background-color: var(--accent);
+    color: var(--text-pe-inchis);
+}
+
+/* dreapta: formular adaugare 25% */
+.adauga {
+    flex: 1;
+    padding: 40px 20px 40px 0;
+    position: sticky;
+    top: 73px;
+    align-self: flex-start;
+}
+
+.adaugaTitlu {
+    background-color: var(--fundal-inchis);
+    color: var(--accent-deschis);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    padding: 10px 16px;
+    letter-spacing: 0.03em;
+    border-radius: var(--radius) var(--radius) 0 0;
+}
+
+.adaugaAngajat {
+    border: 1px solid var(--separator);
+    border-top: none;
+    border-radius: 0 0 var(--radius) var(--radius);
+    padding: 20px 16px;
+    background-color: var(--pagina);
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.randFormular {
+    display: flex;
+    gap: 12px;
+}
+
+.elementFormular {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 14px;
+}
+
+.elementFormular label {
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--fundal-inchis);
+    margin-bottom: 5px;
+}
+
+.elementFormular input {
+    padding: 9px 12px;
+    border: 2px solid var(--separator);
+    border-radius: var(--radius);
+    font-family: 'Jost', sans-serif;
+    font-size: 0.88rem;
+    color: var(--text-principal);
+    background: var(--text-pe-inchis);
+    transition: border-color var(--tranzitie), box-shadow var(--tranzitie);
+}
+
+.elementFormular input:focus {
+    outline: none;
+    border-color: var(--fundal-inchis);
+    box-shadow: 0 0 0 3px rgba(61, 90, 62, 0.15);
+}
+
+.elementFormular input::placeholder {
+    color: var(--text-secundar);
+    font-style: italic;
+    font-size: 0.85rem;
+}
+
+.newsletterButon {
+    display: block;
+    width: 100%;
+    margin-top: 6px;
+    padding: 11px;
+    background: linear-gradient(135deg, var(--fundal-inchis), var(--fundal-deschis));
+    color: var(--text-pe-inchis);
+    border: none;
+    border-radius: var(--radius);
+    font-family: 'Jost', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    transition: filter var(--tranzitie), transform var(--tranzitie);
+}
+
+.newsletterButon:hover {
+    filter: brightness(1.12);
+    transform: translateY(-2px);
+}
